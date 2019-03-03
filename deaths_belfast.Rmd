@@ -1,0 +1,112 @@
+<h1>Remembering: the victims of the Troubles</h1>
+<p>All data is extracted from Michael McKeown's open dataset (available at https://cain.ulster.ac.uk/victims/mckeown/index.html)</p>
+```{r}
+library(tidyverse)
+library(ggplot2)
+library(janitor)
+library(extrafont)
+library(RColorBrewer)
+mckeown <- read.csv('deaths_mckeown.csv', na =c('', NA))
+glimpse(mckeown)
+
+mc_clean <- mckeown %>%
+  clean_names() %>%
+  mutate(year = parse_date(year, format = '%Y'))
+
+victims_per_year <- mc_clean %>%
+  group_by(year) %>%
+  summarise(victims = n())
+```
+<h2>Victims per year</h2>
+<p>From the 1970s peak to gradual decline, but tension remains high</p>
+```{r}
+ggplot(victims_per_year, aes(year, victims)) + geom_area(col = '#801515', fill = '#D46A6A', alpha = .5) +
+  theme_minimal() +
+  labs(title = 'Victims in NI conflict, 1969-2001', caption = 'Dati: McKeown, Michael. (2009). Spreadsheet of Deaths Associated with Violence in Northern Ireland, 1969-2001', x = '', y = 'Vittime') +
+  theme(text = element_text(family = 'Open Sans'), axis.title.y = element_text(margin = margin(t = 0, r = 20, b = 0, l = 0)), plot.title = element_text(margin = margin(t = 0, r = 0, b = 20, l = 0)), panel.grid = element_line(colour = '#f2f2f2'), panel.grid.minor.x = element_blank())
+```
+<h2>Victims by rationale</h2>
+```{r}
+vic_by_rationale <- mc_clean %>%
+  group_by(rationale) %>%
+  summarise(victims = n()) %>%
+  arrange(desc(victims))
+
+ggplot(vic_by_rationale, aes(reorder(rationale, victims), victims)) +
+  geom_col(alpha = .7, fill = '#801515') +
+  coord_flip() + 
+  theme_minimal() +
+  labs(x = '', y = 'Victims', title = 'Victims in NI conflict by rationale, 1969-2001', caption = 'Data: McKeown, Michael. (2009). Spreadsheet of Deaths Associated with Violence in Northern Ireland, 1969-2001') +
+  theme(text = element_text(family = 'Open Sans'), plot.title = element_text(margin = margin(b = 15)), axis.title.x = element_text(margin = margin(t = 10, b = 10)), panel.grid.major.y = element_blank(), panel.grid = element_line(colour = '#f2f2f2'))
+```
+<h2>Victims by religion</h2>
+<p>Overview</p>
+```{r}
+vic_by_religion <- mc_clean %>%
+  group_by(religion) %>%
+  summarise(victims = n()) %>%
+  arrange(desc(victims))
+
+ggplot(vic_by_religion, aes(reorder(religion, victims), victims, fill = religion)) +
+  geom_col(alpha = .7 ) +
+  coord_flip() + 
+  theme_minimal() +
+  labs(x = '', y = 'Victims', title = 'Victims in NI conflict by religion, 1969-2001', caption = 'Data: McKeown, Michael. (2009). Spreadsheet of Deaths Associated with Violence in Northern Ireland, 1969-2001') +
+  theme(text = element_text(family = 'Open Sans'), plot.title = element_text(margin = margin(b = 15)), axis.title.x = element_text(margin = margin(t = 10, b = 10)), panel.grid.major.y = element_blank(), panel.grid = element_line(colour = '#f2f2f2'))+
+  scale_fill_manual(values = c('#80CDC1', '#CCCCCC', '#E6AB02'), guide = FALSE )
+```
+
+```{r}
+# qualitative palette for the next two charts
+qual_p <- brewer.pal(n = 4, name = 'Set2')
+```
+<p>Agency-group match is done based on McKeon's lookup tables</p>
+
+<h3>Victims identified as catholic</h3>
+```{r}
+catholic_victims <- mc_clean %>%
+  filter(religion == 'Catholic')
+
+lookup_agency <- read.csv('lookup_agency.csv')
+
+indices <- match ( x = catholic_victims$agency, table = lookup_agency$Agency)
+
+lookup <- add_column(lookup_agency[indices, ], x = catholic_victims$agency)
+
+catholic_victims <- catholic_victims %>%
+  mutate('group' = lookup$Group) %>%
+  group_by(group) %>%
+  summarise(victims = n())
+
+ggplot(catholic_victims, aes(reorder(group, victims), victims, group = group, fill = group)) + geom_col(alpha = .7, guides= FALSE) +
+  coord_flip() +
+  theme_minimal() +
+labs(x = '', y = 'Victims', title = 'Catholic victims in NI conflict by group, 1969-2001', caption = 'Data: McKeown, Michael. (2009). Spreadsheet of Deaths Associated with Violence in Northern Ireland, 1969-2001') +
+  theme(text = element_text(family = 'Open Sans'), plot.title = element_text(margin = margin(b = 15)), axis.title.x = element_text(margin = margin(t = 10, b = 10)), panel.grid.major.y = element_blank(), panel.grid = element_line(colour = '#f2f2f2')) +
+  scale_fill_manual(values = qual_p, guide = FALSE)
+```
+<h3>Victims identified as protestant</h3>
+```{r}
+protestant_victims <- mc_clean %>%
+  filter(religion == 'Protestant')
+
+
+
+indices_p <- match ( x = protestant_victims$agency, table = lookup_agency$Agency)
+
+lookup_p <- add_column(lookup_agency[indices_p, ], x = protestant_victims$agency)
+
+protestant_victims <- protestant_victims %>%
+  mutate('group' = lookup_p$Group) %>%
+  group_by(group, agency) %>%
+  summarise(victims = n())
+
+ggplot(protestant_victims, aes(reorder(group, victims), victims, group = group, fill = group)) + 
+  geom_col(alpha = .7) +
+  coord_flip() +
+  theme_minimal() +
+labs(x = '', y = 'Victims', title = 'Protestant victims in NI conflict by group, 1969-2001', caption = 'Data: McKeown, Michael. (2009). Spreadsheet of Deaths Associated with Violence in Northern Ireland, 1969-2001') +
+  theme(text = element_text(family = 'Open Sans'), plot.title = element_text(margin = margin(b = 15)), axis.title.x = element_text(margin = margin(t = 10, b = 10)), panel.grid.major.y = element_blank(), panel.grid = element_line(colour = '#f2f2f2')) +
+  scale_fill_manual(values = qual_p, guide = FALSE)
+```
+
