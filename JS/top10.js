@@ -53,12 +53,6 @@
        barChart(deaths_data);
 
 
-    var altScale = d3.scaleBand()
-    .domain([height, 0])
-    .range(data.map(function (d) { 
-        return d.location_name + ' ' + d.year;
-    }));
-     
    
        svg.append("g")
                    .attr("class", "y axis")
@@ -72,6 +66,31 @@
                     "translate(0," + (height ) + ")"
                 )
                    .call(d3.axisBottom(xScale));
+
+
+           // axis labels
+
+    svg.append("text")             
+    .attr("transform",
+          "translate(" + (width / 2) + " ," + 
+                         (height + margin.bottom) + ")")
+    .style("text-anchor", "middle")
+    .attr('class', 'x axisLabel')
+    .text("Victims");
+
+
+  /*   svg.append("text")
+    .attr("transform", "rotate(-90)")
+    .attr("y", 0 - margin.left)
+    .attr("x",0 - (height / 2))
+    .attr("dy", "1em")
+    .style("text-anchor", "middle")
+    .attr('class', 'y axisLabel')
+    .text("Groups");
+ */
+
+ // legend
+ createLegend(d3.select('#top10 svg'), data)
 
 
    })
@@ -204,17 +223,41 @@
        }
    
    
-   
-   // smooth line transition 
-   function transition(path) {
-           path.transition()
-               .duration(2000)
-               .attrTween("stroke-dasharray", tweenDash);
+       function createLegend (parent, data) {
+var square = 15;
+var y = 10;
+       var legendWidth = width /3;
+        var legend = parent.insert('g', 'g')
+        .attr('class', 'legend');
+    
+      var l_group =  legend.selectAll('g')
+        .data(d3.map(data, function(d){return d.context;}).keys())
+        .enter()
+        .append('g');
+
+        l_group
+        .append('rect')
+        .attr('width', square)
+        .attr('height', square)
+        .attr('x', function (d, i) {
+            return legendWidth * i;
+        })
+        .attr('y', y)
+        .attr('fill', function (d) {
+            return colours(d);
+        })
+
+        l_group
+        .append('text')
+        .attr('x', function (d, i) {
+            return legendWidth * i + square + 5;
+        })
+        .attr('y', y + 14)
+        .text(function (d) {
+            return d;
+        })
        }
-       function tweenDash() {
-           var l = this.getTotalLength(),
-               i = d3.interpolateString("0," + l, l + "," + l);
-           return function (t) { return i(t); };
-       }
+
    
    })();
+
