@@ -1,0 +1,120 @@
+body {
+    background-color: #e3e3e3;
+    margin: 0;
+}
+
+
+body * {
+    font-family: 'Roboto', 'Open Sans', Arial, Helvetica, sans-serif;
+}
+
+h1, h2, h3 {
+    font-family: 'Domine', 'Times New Roman', Times, serif;
+}
+
+
+.focus circle {
+    z-index: 99;
+}
+
+#content {
+    width: 75vw;
+    margin: 1em auto;
+    padding: 5em;
+    background-color: #fff;
+}
+
+.text {
+    width: 60vw;
+    margin: 0 auto;
+}
+
+
+.chartDiv {
+    width: 100%;
+    min-height: 80vh;
+}
+
+
+.barChart {
+    width: 50%;
+    min-height: 80vh;
+    margin: 0 auto;
+}
+.barlabel, .label {
+    stroke: none;
+    fill: #ffffff;
+    font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+    font-size: .9em;
+}
+
+#stories {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#top10_story {
+    background: #EBF8F7;
+    padding: 1em 2em;
+}
+
+.selected {
+    opacity: .5;
+}
+
+.invisible {
+    display: none;
+}
+header {
+    width: 100%;
+    background-color: #222020;
+    padding: .5em;
+    position: fixed;
+    opacity: .8;
+    top: 0;
+}
+
+.headerTitle {
+    color: #fff;
+    font-size: 1.4em;
+}
+
+
+.axis text {
+    font-family:'Roboto',  'Open Sans', Helvetica, Arial, sans-serif;
+}
+
+
+.focus text {
+    font-family: 'Roboto', 'Open Sans', Helvetica, Arial, sans-serif;
+    font-weight: 600;
+}
+
+#treemap {
+    width:100%;
+    height: auto;
+    margin: 0 auto;
+   
+  /*   overflow: auto; */
+}
+
+.treeLabel {
+    stroke:none;
+    font-size: 1.05em;
+   
+}
+
+
+div.tooltip {
+    position: absolute;
+    text-align: center;
+    min-width: 60px;
+    min-height: 40px;
+    padding: 2px;
+    font: 16px sans-serif;
+    background: white;
+    border: 0px;
+    border-radius: 8px;
+    pointer-events: none;
+}

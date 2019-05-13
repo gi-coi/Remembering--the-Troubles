@@ -1,0 +1,65 @@
+group,parent,agency,full_agency,victims,name
+Religion,null,,,,Religion
+Catholic,Religion,,,,Catholic
+Not Relevant,Religion,,,,Not Relevant
+Protestant,Religion,,,,Protestant
+Non Combatant,Catholic,Alleged Inf.,Alleged Informer,43,Non Combatant - Alleged Informer
+Non Combatant,Catholic,Businessman,Businessman,3,Non Combatant - Businessman
+Non Combatant,Catholic,criminality,criminality,32,Non Combatant - criminality
+Non Combatant,Catholic,Ex ser.,Former combatant,9,Non Combatant - Former combatant
+Non Combatant,Catholic,Legal/judicial,Legal/judicial,6,Non Combatant - Legal/judicial
+Non Combatant,Catholic,Other Non Combatant,Other Non Combatant,1011,Non Combatant - Other Non Combatant
+Non Combatant,Catholic,Paramilitary informer,Paramilitary informer,23,Non Combatant - Paramilitary informer
+Non Combatant,Catholic,Pol,Politician,7,Non Combatant - Politician
+Non Combatant,Catholic,Retail,Retail,48,Non Combatant - Retail
+Non Combatant,Catholic,Security,Security,9,Non Combatant - Security
+Non Combatant,Catholic,Taxi,Taxi,18,Non Combatant - Taxi
+Republican Paramilitary,Catholic,Inla,Irish National Liberation Army,34,Republican Paramilitary - Irish National Liberation Army
+Republican Paramilitary,Catholic,Iplo,Irish People's Liberation Organisation,8,Republican Paramilitary - Irish People's Liberation Organisation
+Republican Paramilitary,Catholic,OIRA,Official Irish Republican Army,26,Republican Paramilitary - Official Irish Republican Army
+Republican Paramilitary,Catholic,Provos,Provisional Irish Republican Army,258,Republican Paramilitary - Provisional Irish Republican Army
+Republican Paramilitary,Catholic,RIRA,Real Irish Republican Army,2,Republican Paramilitary - Real Irish Republican Army
+Security Forces,Catholic,BA,British Army,3,Security Forces - British Army
+Security Forces,Catholic,PO,Police Officer,4,Security Forces - Police Officer
+Security Forces,Catholic,RUC,Royal Ulster Constabulary,39,Security Forces - Royal Ulster Constabulary
+Security Forces,Catholic,UDR,Ulster Defence Regiment,10,Security Forces - Ulster Defence Regiment
+Loyalist Paramilitary,Not Relevant,Uda,Ulster Defence Association,1,Loyalist Paramilitary - Ulster Defence Association
+Non Combatant,Not Relevant,Alleged Inf.,Alleged Informer,3,Non Combatant - Alleged Informer
+Non Combatant,Not Relevant,Businessman,Businessman,5,Non Combatant - Businessman
+Non Combatant,Not Relevant,criminality,criminality,5,Non Combatant - criminality
+Non Combatant,Not Relevant,Ex ser.,Former combatant,4,Non Combatant - Former combatant
+Non Combatant,Not Relevant,Other Non Combatant,Other Non Combatant,159,Non Combatant - Other Non Combatant
+Non Combatant,Not Relevant,Paramilitary informer,Paramilitary informer,1,Non Combatant - Paramilitary informer
+Non Combatant,Not Relevant,Pol,Politician,11,Non Combatant - Politician
+Non Combatant,Not Relevant,Taxi,Taxi,1,Non Combatant - Taxi
+Republican Paramilitary,Not Relevant,Inla,Irish National Liberation Army,4,Republican Paramilitary - Irish National Liberation Army
+Republican Paramilitary,Not Relevant,Off,Official Irish Republican Army,3,Republican Paramilitary - Official Irish Republican Army
+Republican Paramilitary,Not Relevant,Prov.,Provisional Irish Republican Army,12,Republican Paramilitary - Provisional Irish Republican Army
+Security Forces,Not Relevant,BA,British Army,499,Security Forces - British Army
+Security Forces,Not Relevant,Eng.Constab.,English Constabulary,5,Security Forces - English Constabulary
+Security Forces,Not Relevant,Guard/Army,Guard/Army,13,Security Forces - Guard/Army
+Security Forces,Not Relevant,PO,Police Officer,1,Security Forces - Police Officer
+Security Forces,Not Relevant,RUC,Royal Ulster Constabulary,7,Security Forces - Royal Ulster Constabulary
+Security Forces,Not Relevant,UDR,Ulster Defence Regiment,3,Security Forces - Ulster Defence Regiment
+Loyalist Paramilitary,Protestant,Lvf,Loyalist Volunteer Force,6,Loyalist Paramilitary - Loyalist Volunteer Force
+Loyalist Paramilitary,Protestant,RHD,Red Hand Defenders,1,Loyalist Paramilitary - Red Hand Defenders
+Loyalist Paramilitary,Protestant,Uda,Ulster Defence Association,69,Loyalist Paramilitary - Ulster Defence Association
+Loyalist Paramilitary,Protestant,Uvf,Ulster Volunteer Force,51,Loyalist Paramilitary - Ulster Volunteer Force
+Non Combatant,Protestant,Alleged Inf.,Alleged Informer,7,Non Combatant - Alleged Informer
+Non Combatant,Protestant,Businessman,Businessman,15,Non Combatant - Businessman
+Non Combatant,Protestant,criminality,criminality,8,Non Combatant - criminality
+Non Combatant,Protestant,Ex ser.,Former combatant,56,Non Combatant - Former combatant
+Non Combatant,Protestant,Legal/judicial,Legal/judicial,2,Non Combatant - Legal/judicial
+Non Combatant,Protestant,Other Non Combatant,Other Non Combatant,565,Non Combatant - Other Non Combatant
+Non Combatant,Protestant,Paramilitary informer,Paramilitary informer,8,Non Combatant - Paramilitary informer
+Non Combatant,Protestant,Pol,Politician,6,Non Combatant - Politician
+Non Combatant,Protestant,Retail,Retail,20,Non Combatant - Retail
+Non Combatant,Protestant,Security,Security,11,Non Combatant - Security
+Non Combatant,Protestant,Taxi,Taxi,7,Non Combatant - Taxi
+Republican Paramilitary,Protestant,Inla,Irish National Liberation Army,1,Republican Paramilitary - Irish National Liberation Army
+Republican Paramilitary,Protestant,Off,Official Irish Republican Army,1,Republican Paramilitary - Official Irish Republican Army
+Republican Paramilitary,Protestant,Prov.,Provisional Irish Republican Army,1,Republican Paramilitary - Provisional Irish Republican Army
+Security Forces,Protestant,BA,British Army,10,Security Forces - British Army
+Security Forces,Protestant,PO,Police Officer,24,Security Forces - Police Officer
+Security Forces,Protestant,RUC,Royal Ulster Constabulary,258,Security Forces - Royal Ulster Constabulary
+Security Forces,Protestant,UDR,Ulster Defence Regiment,192,Security Forces - Ulster Defence Regiment

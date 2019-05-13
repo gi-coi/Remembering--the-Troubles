@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="A layout example with a side menu that hides on mobile, just like the Pure website.">
+    <link href="https://fonts.googleapis.com/css?family=Domine" rel="stylesheet">
+    <title>Remembering the Troubles</title>
+
+
+    <link rel="stylesheet" href="CSS/style.css">
+    <!-- <script src="//d3js.org/d3.v4.min.js" charset="utf-8"></script> -->
+
+    <script src='JS/d3.v4.min.js'></script>
+
+</head>
+
+<body>
+    <header>
+        <h1 class='headerTitle'>Remembering the Troubles</h1>
+    </header>
+    <div id='content'>
+        <section class='text'>
+            <h1>Remembering the Troubles: 1968-2001</h1>
+            <p>This project commemorates the victims of the Troubles that occurred in Northern Ireland between 1968 and
+                2001. It was a tragedy of immense proportion, which left almost 4,000 people dead and caused
+                incalculable damage to the lives of those who survived. The true costs of the Troubles will probably
+                never be fully known.</p>
+            <p>The age of the Troubles might be over, but its legacy is still present in the daily lives of the people
+                living in Northern Ireland. The death of journalist Lyra McKee reminds us all that peace, painfully
+                achieved with the Good Friday agreement, is fragile and violence is still very much present. The voices
+                of the dead should never be forgotten. The experiences of those who are still alive should always be
+                kept in mind.</p>
+            <h2>The data</h2>
+            <p>The dataset used on this page comes from Robert McKeown's research, which accounts for all victims of the
+                Troubles between 1968 and 2005. The dataset has been made freely available for research purposes.</p>
+            <p>I have also undertaken additional research to give a life and body to the stories told by the numbers,
+                such as the exact locations of the attacks carried out out of Northern Ireland.</p>
+        </section>
+        <section class='text'>
+            <h2>Deaths: a timeline</h2>
+            <p>McKeown's database records deaths from 1969 to 2005. His account slightly differs from that of another
+                well-known dataset compiled by Sutton, but the estimates tend to converge. The names of 3,649 people are
+                listed in McKeown's collection.</p>
+            <p>Violence escalated in the early 1970s and peaked in 1974, before subsiding slightly in the years that
+                followed. A fresh outbreak of violence in the 1980s and early 1990s prompted new political discussions,
+                which evwentually led to the Good Friday agreement of 1998. The count of victims, however, continued and
+                is ongoing to this date, even though it is nowhere near the peak of the 1970s.</p>
+        </section>
+        <div id='deathTimeline' class='chartDiv'></div>
+        <section class='text'>
+            <h2>Reading the conflict: who died in the Troubles?</h2>
+            <p>The Troubles are often read as a sectarian conflict between peoples with two different religious
+                traditions: Catholic and Protestants.</p>
+            <p>It was, however, mostly a political struggle between Republicans and Loyalists over the control of
+                Northern Ireland, or Ulster. It is therefore no surprise that most victims were security force targets.
+                For Irish republican militias, in particulars, the British military was an occupation force that had to
+                be driven out of the island.</p>
+
+        </section>
+        <div id='deathCauses' class='barChart'></div>
+
+        <section class='text'>
+            <h3>Victims by religion: a complex story</h3>
+            <p>Most victims were either Catholic or Protestant, but those whose religion is defined as "not relevant" to
+                the killing are a sizeable minority.</p>
+            <p>It still does not mean killings were sectarian in nature; in several instances, paramilitary groups are
+                associated with their side's religion.</p>
+            <p>Most concerning, most victims are civilians, among both Catholics and Protestants.</p>
+            <p>Hover on the squares to identify each group, and click to zoom in.</p>
+        </section>
+        <div id='treemap' class='chartDiv'></div>
+        <section id='text'>
+            <h2>More than the numbers: read the stories</h2>
+            <p>The violence of the Trobules is much more than numbers. In many instances, perpetrators were not found
+                and prosecuted, and the families are still asking for justice to be restored. The story of the Troubles
+                is also one of miscarriage of justice and questions with no answer. A Historical Inquiries Committee was
+                established to investigate the security forces' and police's behaviour during those years and to uncover
+                malpractice. Some government commissions (like the Saville Inquiry) have been established to investigate specific cases.
+                For decades, organisations and advocacy groups have worked relentlessly to find justice and truth for the dead and the living.
+            </p>
+        </section>
+        <section id='stories'>
+
+            <div id='top10' class='barChart'></div>
+            <div id='top10_story' class='invisible'>
+                <h2></h2>
+                <p></p>
+            </div>
+        </section>
+        <div id='circlesChart' class='chartDiv'></div>
+
+    </div>
+    <script src='JS/timeline.js'>
+
+
+
+
+
+
+    </script>
+    <script src='JS/rationale.js'></script>
+    <script src='JS/treemap.js'></script>
+    <script src='JS/top10.js'></script>
+    <script src='JS/locations.js'></script>
+
+</body>
+
+
+
+
+</html>

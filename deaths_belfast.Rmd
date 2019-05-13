@@ -10,12 +10,13 @@ mckeown <- read.csv('deaths_mckeown.csv', na =c('', NA))
 glimpse(mckeown)
 
 mc_clean <- mckeown %>%
-  clean_names() %>%
-  mutate(year = parse_date(year, format = '%Y'))
+  clean_names() #%>%
+ # mutate(year = parse_date(year, format = '%Y'))
 
-victims_per_year <- mc_clean %>%
+ mc_clean %>%
   group_by(year) %>%
-  summarise(victims = n())
+  summarise(victims = n()) -> victims_per_year
+  # write.csv('deaths_by_year.csv', row.names = FALSE)
 ```
 <h2>Victims per year</h2>
 <p>From the 1970s peak to gradual decline, but tension remains high</p>
@@ -32,6 +33,7 @@ vic_by_rationale <- mc_clean %>%
   summarise(victims = n()) %>%
   arrange(desc(victims))
 
+write.csv(vic_by_rationale, 'vic_rationale.csv', row.names = FALSE)
 ggplot(vic_by_rationale, aes(reorder(rationale, victims), victims)) +
   geom_col(alpha = .7, fill = '#801515') +
   coord_flip() + 
@@ -48,7 +50,7 @@ vic_by_religion <- mc_clean %>%
   arrange(desc(victims))
 
 ggplot(vic_by_religion, aes(reorder(religion, victims), victims, fill = religion)) +
-  geom_col(alpha = .7 ) +
+  geom_col(alpha = .7, position = 'stack' ) +
   coord_flip() + 
   theme_minimal() +
   labs(x = '', y = 'Victims', title = 'Victims in NI conflict by religion, 1969-2001', caption = 'Data: McKeown, Michael. (2009). Spreadsheet of Deaths Associated with Violence in Northern Ireland, 1969-2001') +
@@ -109,4 +111,92 @@ labs(x = '', y = 'Victims', title = 'Protestant victims in NI conflict by group,
   theme(text = element_text(family = 'Open Sans'), plot.title = element_text(margin = margin(b = 15)), axis.title.x = element_text(margin = margin(t = 10, b = 10)), panel.grid.major.y = element_blank(), panel.grid = element_line(colour = '#f2f2f2')) +
   scale_fill_manual(values = qual_p, guide = FALSE)
 ```
+
+```{r}
+names(lookup_agency)[2] <- 'agency'
+
+
+mc_clean %>%
+  left_join(lookup_agency, by = 'agency') -> mc_clean
+
+mc_clean %>%
+  group_by(religion, Group, agency) %>%
+  count(religion) %>%
+  ggplot(aes(religion, n, fill = Group)) + geom_col(position = 'fill') + coord_flip() +
+  theme_minimal() +
+  theme(panel.grid = element_blank(), legend.position = 'top')
+```
+
+```{r}
+mc_clean %>%
+  filter(multiple_fatality == TRUE) %>%
+  group_by(year, location_name, x1st_fatality, context, year) %>%
+  count(x1st_fatality) %>%
+  arrange(desc(n)) %>%
+  ungroup() %>%
+  top_n(10) %>%
+ write.csv('top15_fatality.csv', row.names = FALSE)
+  ggplot(aes(reorder(x1st_fatality, n), n, fill = context)) + geom_col() + coord_flip() +
+  geom_text(aes(x1st_fatality, n - 3, label = year)) +
+  theme_minimal()
+```
+
+```{r}
+mc_clean %>%
+  group_by(sex, status) %>%
+  count(status) %>% 
+  ggplot(aes(sex, n, fill = status)) + geom_col(position = 'stack')
+```
+
+```{r}
+mc_clean %>%
+  group_by(location_name) %>%
+  summarise(victims = n()) %>%
+  arrange(desc(victims)) %>%
+  write.csv('victims_location.csv', row.names = FALSE)
+```
+
+```{r}
+lookup.status <- read.csv('lookup_status.csv') %>%
+  clean_names()
+
+
+
+mc_clean %>%
+  left_join(., lookup.status, by = 'status') %>%
+  group_by(religion, group, status) %>%
+  summarise(victims= n()) -> status_groups
+
+status_groups %>%
+  mutate(child = paste(group,status, sep = ' - ')) -> status_groups
+
+write.csv(status_groups, 'merged.csv', row.names = FALSE)
+
+# religions <- tibble(name = unique(status_groups$religion)) %>%
+#   mutate(parent = rep('Religion', nrow(.)), victims = rep(NA, nrow(.))) %>%
+#   write.csv('religions.csv', row.names = FALSE)
+# 
+# groups <- unique(status_groups[,c('religion','group')])
+# names(groups) <- c('parent', 'name')
+# groups$victims <- NA
+# write.csv(groups, 'groups.csv', row.names = FALSE)
+# statuses <- (status_groups[,c('group','status', 'victims')])
+# names(statuses) <- c('parent', 'name', 'victims')
+# 
+# write.csv(statuses, 'statuses.csv', row.names = FALSE)
+# 
+# 
+# merge(religions, groups) -> df
+# 
+# 
+# distinct(status_groups$religion, status_groups$group)
+# status_groups %>%
+#   gather(key = name, value = n, - victims)
+# 
+# for (i in 1:length(status_groups)) {
+#   if ()
+# },
+```
+
+
 
