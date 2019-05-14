@@ -1,10 +1,85 @@
-"rationale","victims"
-"Security Force Target",1129
-"Sectarian",980
-"Punitive",690
-"Counter Insurgency",259
-"Adventitious",175
-"Economic Sabotage",171
-"General Subversion",102
-"Public Order",96
-"Not Classified",47
+"rationale","agency","victims"
+"Security Force Target","Prov",1039
+"Punitive","Prov",337
+"Sectarian","NSL",284
+"Sectarian","UVF",259
+"Counter Insurgency","BA",221
+"Sectarian","UDA",183
+"Economic Sabotage","Prov",134
+"Adventitious","Personally Culpable",109
+"Punitive","UVF",109
+"Sectarian","Prov",109
+"Sectarian","NSR",83
+"Public Order","BA",67
+"Punitive","UDA",63
+"Punitive","NSL",55
+"Security Force Target","INLA",51
+"Punitive","INLA",45
+"General Subversion","Personally Culpable",36
+"General Subversion","Prov",35
+"Counter Insurgency","RUC",28
+"Economic Sabotage","RIRA",28
+"Public Order","RUC",25
+"Security Force Target","Off",24
+"Not Classified","Not Classified",23
+"Adventitious","Not Classified",19
+"Sectarian","INLA",19
+"Adventitious","Prov",18
+"Punitive","Off",18
+"Punitive","IPLO",14
+"Punitive","NSR",14
+"Adventitious","BA",13
+"Sectarian","RHC",12
+"Punitive","Iirregular",10
+"Sectarian","LVF",10
+"Adventitious","NSL",8
+"General Subversion","NSL",8
+"Sectarian","IPLO",8
+"General Subversion","UVF",7
+"Not Classified","UVF",7
+"General Subversion","INLA",6
+"Not Classified","Prov",6
+"Punitive","Not Classified",6
+"Punitive","RHD",6
+"Security Force Target","Personally Culpable",6
+"Counter Insurgency","UDR",5
+"Economic Sabotage","Personally Culpable",5
+"Not Classified","NSL",5
+"Punitive","RHC",5
+"Sectarian","Not Classified",5
+"Counter Insurgency","ISF",4
+"General Subversion","NSR",4
+"Punitive","LVF",4
+"Security Force Target","NSR",4
+"Public Order","UDR",3
+"Sectarian","Iirregular",3
+"Sectarian","RHD",3
+"Adventitious","NSR",2
+"Adventitious","Off",2
+"Economic Sabotage","NSL",2
+"General Subversion","Off",2
+"Not Classified","UDA",2
+"Sectarian","Off",2
+"Security Force Target","IPLO",2
+"Security Force Target","NSL",2
+"Adventitious","Iirregular",1
+"Adventitious","INLA",1
+"Adventitious","UDA",1
+"Adventitious","UVF",1
+"Counter Insurgency","Not Classified",1
+"Economic Sabotage","NSR",1
+"Economic Sabotage","UVF",1
+"General Subversion","ISF",1
+"General Subversion","Not Classified",1
+"General Subversion","RIRA",1
+"General Subversion","Saor Eire",1
+"Not Classified","INLA",1
+"Not Classified","NSR",1
+"Not Classified","Off",1
+"Not Classified","RIRA",1
+"Public Order","lrdg",1
+"Punitive","BA",1
+"Punitive","IPLO BB",1
+"Punitive","RIRA",1
+"Punitive","Saor Eire",1
+"Security Force Target","UDA",1

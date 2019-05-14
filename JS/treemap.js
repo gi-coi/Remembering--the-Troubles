@@ -71,7 +71,7 @@ var yScale = d3.scaleLinear()
     d.victims = +d.victims;
     return d;
   }, function (data) {
-    console.log(data);
+    /* console.log(data); */
 
     jsonfy(data);
   })
@@ -258,7 +258,7 @@ var yScale = d3.scaleLinear()
       });
  */
 var transition = function (data) {
-  console.log(data);
+  /* console.log(data); */
   if (transitioning || !data) return;
   transitioning = true;
  

@@ -45,7 +45,7 @@
        d.victims = +d.victims;
        return d;
    }, function(deaths_data) {
-       console.log(deaths_data);
+      /*  console.log(deaths_data); */
    
    
        data = deaths_data
@@ -106,7 +106,7 @@
        .key( function (d) { return d.location_name})
        .entries(data);
    
-       console.log(nest)
+       /* console.log(nest) */
    
        yScale.domain(data.map(function (d) {
           
