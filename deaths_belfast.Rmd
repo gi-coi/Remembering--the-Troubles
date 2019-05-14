@@ -29,10 +29,14 @@ ggplot(victims_per_year, aes(year, victims)) + geom_area(col = '#801515', fill =
 <h2>Victims by rationale</h2>
 ```{r}
 vic_by_rationale <- mc_clean %>%
-  group_by(rationale) %>%
+  group_by(rationale, agency) %>%
   summarise(victims = n()) %>%
   arrange(desc(victims))
 
+vic_by_rationale %>%
+  spread(key = agency, value = victims) -> vic_by_rationale_wide
+  
+  write.csv(vic_by_rationale_wide, 'vic_wide.csv', row.names = FALSE)
 write.csv(vic_by_rationale, 'vic_rationale.csv', row.names = FALSE)
 ggplot(vic_by_rationale, aes(reorder(rationale, victims), victims)) +
   geom_col(alpha = .7, fill = '#801515') +
