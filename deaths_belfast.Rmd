@@ -26,6 +26,31 @@ ggplot(victims_per_year, aes(year, victims)) + geom_area(col = '#801515', fill =
   labs(title = 'Victims in NI conflict, 1969-2001', caption = 'Dati: McKeown, Michael. (2009). Spreadsheet of Deaths Associated with Violence in Northern Ireland, 1969-2001', x = '', y = 'Vittime') +
   theme(text = element_text(family = 'Open Sans'), axis.title.y = element_text(margin = margin(t = 0, r = 20, b = 0, l = 0)), plot.title = element_text(margin = margin(t = 0, r = 0, b = 20, l = 0)), panel.grid = element_line(colour = '#f2f2f2'), panel.grid.minor.x = element_blank())
 ```
+
+Victims by year and location
+```{r}
+mc_clean %>%
+  filter(location < 19) %>%
+  mutate(total = nrow(.)) #3390 deaths in NI 
+
+mc_clean %>%
+  filter(location >= 19) %>%
+  mutate(total = nrow(.)) #259 deaths outside NI
+ 
+```
+
+All deaths in NI, by year
+```{r}
+mc_clean %>%
+  filter(location < 19) %>%
+   group_by(location_name, year) %>%
+  summarise(victims = n()) %>%
+  arrange(year) %>%
+  ungroup () %>%
+  mutate(location_name = recode(location_name, 'West Belfast' = 'Belfast West', 'North Belfast' = 'Belfast North' , 'South Belfast' = 'Belfast South', 'East Belfast' = 'Belfast East')) #%>%
+ # write.csv('deaths_ni.csv', row.names = FALSE)
+```
+
 <h2>Victims by rationale</h2>
 ```{r}
 vic_by_rationale <- mc_clean %>%
@@ -34,10 +59,11 @@ vic_by_rationale <- mc_clean %>%
   arrange(desc(victims))
 
 vic_by_rationale %>%
+  # this includes all responsible agents
   spread(key = agency, value = victims) -> vic_by_rationale_wide
   
-  write.csv(vic_by_rationale_wide, 'vic_wide.csv', row.names = FALSE)
-write.csv(vic_by_rationale, 'vic_rationale.csv', row.names = FALSE)
+  #write.csv(vic_by_rationale_wide, 'vic_wide.csv', row.names = FALSE)
+#write.csv(vic_by_rationale, 'vic_rationale.csv', row.names = FALSE)
 ggplot(vic_by_rationale, aes(reorder(rationale, victims), victims)) +
   geom_col(alpha = .7, fill = '#801515') +
   coord_flip() + 
@@ -45,6 +71,7 @@ ggplot(vic_by_rationale, aes(reorder(rationale, victims), victims)) +
   labs(x = '', y = 'Victims', title = 'Victims in NI conflict by rationale, 1969-2001', caption = 'Data: McKeown, Michael. (2009). Spreadsheet of Deaths Associated with Violence in Northern Ireland, 1969-2001') +
   theme(text = element_text(family = 'Open Sans'), plot.title = element_text(margin = margin(b = 15)), axis.title.x = element_text(margin = margin(t = 10, b = 10)), panel.grid.major.y = element_blank(), panel.grid = element_line(colour = '#f2f2f2'))
 ```
+
 <h2>Victims by religion</h2>
 <p>Overview</p>
 ```{r}
@@ -66,6 +93,7 @@ ggplot(vic_by_religion, aes(reorder(religion, victims), victims, fill = religion
 # qualitative palette for the next two charts
 qual_p <- brewer.pal(n = 4, name = 'Set2')
 ```
+
 <p>Agency-group match is done based on McKeon's lookup tables</p>
 
 <h3>Victims identified as catholic</h3>
@@ -116,6 +144,9 @@ labs(x = '', y = 'Victims', title = 'Protestant victims in NI conflict by group,
   scale_fill_manual(values = qual_p, guide = FALSE)
 ```
 
+
+Cleaner lookup match than the previous blocks
+Uses lookup table, but left join matches automatically
 ```{r}
 names(lookup_agency)[2] <- 'agency'
 
@@ -131,6 +162,8 @@ mc_clean %>%
   theme(panel.grid = element_blank(), legend.position = 'top')
 ```
 
+
+Events with the highest number of deaths, classified by context
 ```{r}
 mc_clean %>%
   filter(multiple_fatality == TRUE) %>%
@@ -139,12 +172,14 @@ mc_clean %>%
   arrange(desc(n)) %>%
   ungroup() %>%
   top_n(10) %>%
- write.csv('top15_fatality.csv', row.names = FALSE)
+ #write.csv('top15_fatality.csv', row.names = FALSE)
   ggplot(aes(reorder(x1st_fatality, n), n, fill = context)) + geom_col() + coord_flip() +
   geom_text(aes(x1st_fatality, n - 3, label = year)) +
   theme_minimal()
 ```
 
+
+Exploratory viz: victims by sex and status (tricky, there are too many status variables)
 ```{r}
 mc_clean %>%
   group_by(sex, status) %>%
@@ -156,10 +191,12 @@ mc_clean %>%
 mc_clean %>%
   group_by(location_name) %>%
   summarise(victims = n()) %>%
-  arrange(desc(victims)) %>%
-  write.csv('victims_location.csv', row.names = FALSE)
+  arrange(desc(victims)) #%>%
+ # write.csv('victims_location.csv', row.names = FALSE)
 ```
 
+
+Lookup table for status; left join to create a classification (victims by group and sub-group)
 ```{r}
 lookup.status <- read.csv('lookup_status.csv') %>%
   clean_names()
@@ -174,7 +211,7 @@ mc_clean %>%
 status_groups %>%
   mutate(child = paste(group,status, sep = ' - ')) -> status_groups
 
-write.csv(status_groups, 'merged.csv', row.names = FALSE)
+#write.csv(status_groups, 'merged.csv', row.names = FALSE)
 
 # religions <- tibble(name = unique(status_groups$religion)) %>%
 #   mutate(parent = rep('Religion', nrow(.)), victims = rep(NA, nrow(.))) %>%
