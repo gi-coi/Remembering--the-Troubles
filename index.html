@@ -15,9 +15,9 @@
 
     <script src='JS/d3.v4.min.js'></script>
     <script src="https://d3js.org/d3-color.v1.min.js"></script>
-<script src="https://d3js.org/d3-interpolate.v1.min.js"></script>
-<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/d3/4.7.1/d3.min.js"></script>
+    <script src="https://d3js.org/d3-interpolate.v1.min.js"></script>
+    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/d3/4.7.1/d3.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/d3-queue/3.0.4/d3-queue.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/topojson/2.2.0/topojson.min.js"></script>
     <script src="https://unpkg.com/d3-simple-slider"></script>
@@ -33,7 +33,7 @@
     </header>
     <div id='content'>
         <section class='text'>
-            
+
             <p>This project commemorates the victims of the Troubles that occurred in Northern Ireland between 1968 and
                 2001. It was a tragedy of immense proportion, which left almost 4,000 people dead and caused
                 incalculable damage to the lives of those who survived. The true costs of the Troubles will probably
@@ -43,8 +43,8 @@
                 achieved with the Good Friday agreement, is fragile and violence is still very much present. The voices
                 of the dead should never be forgotten. The experiences of those who are still alive should always be
                 kept in mind.</p>
-            </section>
-                <section class='text'>
+        </section>
+        <section class='text'>
             <h2>The data</h2>
             <p>The dataset used on this page comes from Robert McKeown's research, which accounts for all victims of the
                 Troubles between 1968 and 2005. The dataset has been made freely available for research purposes.</p>
@@ -63,8 +63,12 @@
         </section>
         <div id='deathTimeline' class='chartDiv'></div>
         <section class='text'>
-            <h2>Where did this happen? A map</h2>
-            <p>Here is a map with all deaths in NI</p>
+            <h2>Zooming in on Northern Ireland</h2>
+            <p>Of the 3,649 deaths recorded by McKeown, 3,390 occurred in Northern Ireland. The remaining 259 took place
+                in Great Britain, the Republic of Ireland or other EU countries.<br>
+            Within Northern Ireland itself, some areas suffered more than others. Belfast was the main battleground, especially in the 1970s. Waves of killings also hit other areas, especially in the 1980s and 1990s.</p>
+            <p>Each area in the map below represents a parliamentary constituency. The darker the colour, the higher the number of deaths during the year.<br>
+            Feel free to explore the data using the slider. Hover on each constituency to explore the data by area.</p>
         </section>
         <div id='slider'></div>
         <div id='mapVis' class='chartDiv'></div>
@@ -96,8 +100,10 @@
                 and prosecuted, and the families are still asking for justice to be restored. The story of the Troubles
                 is also one of miscarriage of justice and questions with no answer. A Historical Inquiries Committee was
                 established to investigate the security forces' and police's behaviour during those years and to uncover
-                malpractice. Some government commissions (like the Saville Inquiry) have been established to investigate specific cases.
-                For decades, organisations and advocacy groups have worked relentlessly to find justice and truth for the dead and the living.
+                malpractice. Some government commissions (like the Saville Inquiry) have been established to investigate
+                specific cases.
+                For decades, organisations and advocacy groups have worked relentlessly to find justice and truth for
+                the dead and the living.
             </p>
             <p>Click on each bar to read the story associated with the event.</p>
         </section>
@@ -109,7 +115,7 @@
                 <p></p>
             </div>
         </section>
-      <!--   <div id='circlesChart' class='chartDiv'></div> -->
+        <!--   <div id='circlesChart' class='chartDiv'></div> -->
 
     </div>
     <script src='JS/timeline.js'>
@@ -123,7 +129,7 @@
     <script src='JS/rationale.js'></script>
     <script src='JS/treemap.js'></script>
     <script src='JS/top10.js'></script>
-  <!--   <script src='JS/locations.js'></script> -->
+    <!--   <script src='JS/locations.js'></script> -->
     <script src='JS/deaths_map.js'></script>
 
 </body>
