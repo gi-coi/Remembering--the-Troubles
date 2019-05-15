@@ -182,11 +182,11 @@ var new_groups = groups
      .attr('fill', '#A10C2E');
 
 
-    new_groups
+ /*    new_groups
      .on('click', function (d) {
          stackedBar(nest, d.key);
      })
- 
+  */
  
   
 
@@ -236,7 +236,7 @@ var new_groups = groups
     }
  
  
-    var stackedBar = function (data, key) {
+/*     var stackedBar = function (data, key) {
     
       var filter =  data.filter(function (d) {
             return d.key == key;
@@ -312,27 +312,6 @@ var keys = [];
     
 .merge(groups);
 
-/* 
-new_groups
-.append('rect')
-.attr('class', 'bar')
-.attr('x', 0)
-.attr('y', function (d) { 
-    // 
-    return yScale(d[0].data.rationale)})
-
-.attr('height',  yScale.bandwidth())
-.attr('width', 0)
-
-.transition()
-.duration(750)
-.attr('x', function (d) { return xScale(d[0][0])})
-.attr('width', function (d) { return xScale(d[0][1]) -xScale (d[0][0])})
-
-new_groups.selectAll('.bar')
-.on('click', function (d) {
-    barChart(data);
-}) */
 
  var rects = new_groups
 .selectAll('.bar')
@@ -359,12 +338,6 @@ rects
 .attr('x', function (d) { return xScale(d[0])})
 .attr('width', function (d) { return xScale(d[1]) -xScale (d[0])})
 
-new_groups.selectAll('.bar')
-.on('click', function (d) {
-    barChart(data);
-})
-
- 
 
 
 
@@ -382,7 +355,7 @@ svg.select('.y.axis')
  
 
     };
-    
+     */
     
     
    

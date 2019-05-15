@@ -48,6 +48,7 @@ h1, h2, h3 {
     font-size: .9em;
 }
 
+
 #stories {
     display: flex;
     flex-direction: row;
@@ -142,4 +143,33 @@ div.tooltip {
     border: 0px;
     border-radius: 8px;
     pointer-events: none;
+}
+
+#mapVis {
+    margin: 0px;
+    padding: 0px;
+    height: auto;
+    width: 100%;
+    border: 3px solid #eeeeee;
+    position: relative;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.area {
+    stroke: #000;
+    stroke-width: .1px;
+}
+
+
+#slider {
+    display: flex;
+}
+#yearSlider {
+    width: 30%;
+}
+
+
+.warning {
+   margin: 0em;
+   padding-left: 1em;
 }

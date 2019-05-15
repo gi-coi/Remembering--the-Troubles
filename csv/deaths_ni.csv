@@ -1,0 +1,438 @@
+"location_name","year","victims"
+"East Londonderry",1969,1
+"Foyle",1969,2
+"Newry & Armagh",1969,1
+"Belfast North",1969,7
+"Belfast West",1969,5
+"East Antrim",1970,1
+"Belfast East",1970,3
+"Foyle",1970,5
+"Newry & Armagh",1970,2
+"Belfast North",1970,5
+"Belfast South",1970,2
+"Belfast West",1970,8
+"Belfast East",1971,3
+"Fermanagh & South Tyrone",1971,5
+"Foyle",1971,18
+"Lagan Valley",1971,1
+"Mid Ulster",1971,3
+"Newry & Armagh",1971,11
+"Belfast North",1971,54
+"South Antrim",1971,4
+"Belfast South",1971,8
+"Upper Bann",1971,3
+"Belfast West",1971,53
+"West Tyrone",1971,11
+"East Antrim",1972,4
+"Belfast East",1972,36
+"East Londonderry",1972,4
+"Fermanagh & South Tyrone",1972,26
+"Foyle",1972,68
+"Lagan Valley",1972,2
+"Mid Ulster",1972,4
+"Newry & Armagh",1972,37
+"North Antrim",1972,2
+"Belfast North",1972,93
+"North Down",1972,1
+"South Antrim",1972,11
+"Belfast South",1972,22
+"South Down",1972,5
+"Upper Bann",1972,15
+"Belfast West",1972,146
+"West Tyrone",1972,8
+"Belfast East",1973,15
+"East Londonderry",1973,8
+"Fermanagh & South Tyrone",1973,17
+"Foyle",1973,18
+"Lagan Valley",1973,4
+"Mid Ulster",1973,5
+"Newry & Armagh",1973,30
+"North Antrim",1973,1
+"Belfast North",1973,61
+"North Down",1973,1
+"South Antrim",1973,6
+"Belfast South",1973,12
+"South Down",1973,5
+"Strangford",1973,2
+"Upper Bann",1973,10
+"Belfast West",1973,46
+"West Tyrone",1973,11
+"East Antrim",1974,4
+"Belfast East",1974,9
+"East Londonderry",1974,1
+"Fermanagh & South Tyrone",1974,21
+"Foyle",1974,20
+"Lagan Valley",1974,3
+"Mid Ulster",1974,9
+"Newry & Armagh",1974,28
+"North Antrim",1974,2
+"Belfast North",1974,50
+"North Down",1974,1
+"South Antrim",1974,13
+"Belfast South",1974,23
+"South Down",1974,4
+"Strangford",1974,2
+"Upper Bann",1974,6
+"Belfast West",1974,30
+"West Tyrone",1974,6
+"East Antrim",1975,6
+"Belfast East",1975,16
+"East Londonderry",1975,9
+"Fermanagh & South Tyrone",1975,17
+"Foyle",1975,12
+"Lagan Valley",1975,4
+"Mid Ulster",1975,7
+"Newry & Armagh",1975,37
+"North Antrim",1975,3
+"Belfast North",1975,61
+"North Down",1975,2
+"South Antrim",1975,11
+"Belfast South",1975,14
+"South Down",1975,11
+"Upper Bann",1975,19
+"Belfast West",1975,47
+"West Tyrone",1975,3
+"East Antrim",1976,1
+"Belfast East",1976,6
+"East Londonderry",1976,4
+"Fermanagh & South Tyrone",1976,13
+"Foyle",1976,15
+"Lagan Valley",1976,17
+"Mid Ulster",1976,7
+"Newry & Armagh",1976,40
+"North Antrim",1976,2
+"Belfast North",1976,71
+"North Down",1976,1
+"South Antrim",1976,9
+"Belfast South",1976,17
+"South Down",1976,1
+"Strangford",1976,1
+"Upper Bann",1976,14
+"Belfast West",1976,43
+"West Tyrone",1976,3
+"East Antrim",1977,2
+"East Londonderry",1977,5
+"Fermanagh & South Tyrone",1977,12
+"Foyle",1977,5
+"Lagan Valley",1977,2
+"Mid Ulster",1977,4
+"Newry & Armagh",1977,8
+"North Antrim",1977,5
+"Belfast North",1977,25
+"South Antrim",1977,4
+"Belfast South",1977,3
+"Upper Bann",1977,5
+"Belfast West",1977,29
+"West Tyrone",1977,2
+"Belfast East",1978,1
+"East Londonderry",1978,1
+"Fermanagh & South Tyrone",1978,4
+"Foyle",1978,6
+"Lagan Valley",1978,1
+"Mid Ulster",1978,4
+"Newry & Armagh",1978,19
+"North Antrim",1978,3
+"Belfast North",1978,17
+"South Antrim",1978,2
+"Belfast South",1978,1
+"South Down",1978,1
+"Strangford",1978,12
+"Upper Bann",1978,2
+"Belfast West",1978,10
+"West Tyrone",1978,2
+"Belfast East",1979,4
+"East Londonderry",1979,1
+"Fermanagh & South Tyrone",1979,13
+"Foyle",1979,2
+"Mid Ulster",1979,2
+"Newry & Armagh",1979,20
+"North Antrim",1979,1
+"Belfast North",1979,16
+"Belfast South",1979,1
+"South Down",1979,17
+"Upper Bann",1979,6
+"Belfast West",1979,21
+"West Tyrone",1979,6
+"East Antrim",1980,3
+"Belfast East",1980,3
+"East Londonderry",1980,1
+"Fermanagh & South Tyrone",1980,8
+"Foyle",1980,3
+"Lagan Valley",1980,3
+"Newry & Armagh",1980,15
+"Belfast North",1980,7
+"Belfast South",1980,4
+"South Down",1980,3
+"Upper Bann",1980,2
+"Belfast West",1980,21
+"West Tyrone",1980,2
+"East Antrim",1981,1
+"Belfast East",1981,1
+"East Londonderry",1981,3
+"Fermanagh & South Tyrone",1981,7
+"Foyle",1981,13
+"Lagan Valley",1981,10
+"Mid Ulster",1981,2
+"Newry & Armagh",1981,17
+"Belfast North",1981,17
+"Belfast South",1981,9
+"South Down",1981,3
+"Upper Bann",1981,1
+"Belfast West",1981,22
+"West Tyrone",1981,5
+"East Antrim",1982,1
+"Belfast East",1982,7
+"East Londonderry",1982,17
+"Fermanagh & South Tyrone",1982,5
+"Foyle",1982,12
+"Mid Ulster",1982,1
+"Newry & Armagh",1982,12
+"North Antrim",1982,2
+"Belfast North",1982,5
+"Belfast South",1982,5
+"South Down",1982,2
+"Strangford",1982,1
+"Upper Bann",1982,10
+"Belfast West",1982,16
+"West Tyrone",1982,3
+"East Antrim",1983,3
+"Belfast East",1983,1
+"Fermanagh & South Tyrone",1983,6
+"Foyle",1983,6
+"Mid Ulster",1983,6
+"Newry & Armagh",1983,13
+"North Antrim",1983,2
+"Belfast North",1983,6
+"North Down",1983,2
+"Belfast South",1983,6
+"South Down",1983,6
+"Upper Bann",1983,7
+"Belfast West",1983,5
+"West Tyrone",1983,7
+"East Antrim",1984,3
+"Fermanagh & South Tyrone",1984,13
+"Foyle",1984,4
+"Lagan Valley",1984,2
+"Mid Ulster",1984,4
+"Newry & Armagh",1984,12
+"North Antrim",1984,3
+"Belfast North",1984,1
+"Belfast South",1984,5
+"Upper Bann",1984,4
+"Belfast West",1984,9
+"West Tyrone",1984,4
+"East Londonderry",1985,1
+"Fermanagh & South Tyrone",1985,6
+"Foyle",1985,6
+"Lagan Valley",1985,1
+"Mid Ulster",1985,2
+"Newry & Armagh",1985,20
+"Belfast North",1985,2
+"Belfast South",1985,1
+"South Down",1985,4
+"Belfast West",1985,7
+"West Tyrone",1985,6
+"Belfast East",1986,2
+"East Londonderry",1986,2
+"Fermanagh & South Tyrone",1986,8
+"Foyle",1986,3
+"Lagan Valley",1986,1
+"Newry & Armagh",1986,13
+"Belfast North",1986,11
+"South Antrim",1986,1
+"Belfast South",1986,1
+"South Down",1986,6
+"Upper Bann",1986,1
+"Belfast West",1986,6
+"West Tyrone",1986,5
+"East Londonderry",1987,1
+"Fermanagh & South Tyrone",1987,14
+"Foyle",1987,8
+"Lagan Valley",1987,2
+"Mid Ulster",1987,2
+"Newry & Armagh",1987,19
+"North Antrim",1987,4
+"Belfast North",1987,14
+"South Antrim",1987,2
+"Belfast South",1987,4
+"South Down",1987,3
+"Strangford",1987,1
+"Belfast West",1987,16
+"West Tyrone",1987,2
+"Belfast East",1988,7
+"East Londonderry",1988,1
+"Fermanagh & South Tyrone",1988,7
+"Foyle",1988,5
+"Lagan Valley",1988,8
+"Mid Ulster",1988,4
+"Newry & Armagh",1988,8
+"Belfast North",1988,11
+"Belfast South",1988,5
+"South Down",1988,3
+"Upper Bann",1988,1
+"Belfast West",1988,22
+"West Tyrone",1988,13
+"East Antrim",1989,2
+"Belfast East",1989,3
+"East Londonderry",1989,2
+"Fermanagh & South Tyrone",1989,5
+"Foyle",1989,3
+"Lagan Valley",1989,5
+"Mid Ulster",1989,6
+"Newry & Armagh",1989,7
+"North Antrim",1989,2
+"Belfast North",1989,13
+"Belfast South",1989,1
+"South Down",1989,5
+"Upper Bann",1989,1
+"Belfast West",1989,6
+"West Tyrone",1989,3
+"East Antrim",1990,1
+"Belfast East",1990,1
+"East Londonderry",1990,2
+"Fermanagh & South Tyrone",1990,2
+"Foyle",1990,7
+"Lagan Valley",1990,4
+"Mid Ulster",1990,3
+"Newry & Armagh",1990,16
+"Belfast North",1990,6
+"Belfast South",1990,5
+"South Down",1990,5
+"Upper Bann",1990,8
+"Belfast West",1990,13
+"West Tyrone",1990,4
+"Belfast East",1991,5
+"East Londonderry",1991,1
+"Fermanagh & South Tyrone",1991,2
+"Foyle",1991,3
+"Lagan Valley",1991,5
+"Mid Ulster",1991,14
+"Newry & Armagh",1991,9
+"North Antrim",1991,1
+"Belfast North",1991,9
+"Belfast South",1991,8
+"South Down",1991,1
+"Upper Bann",1991,7
+"Belfast West",1991,23
+"West Tyrone",1991,2
+"Belfast East",1992,8
+"East Londonderry",1992,1
+"Fermanagh & South Tyrone",1992,8
+"Foyle",1992,2
+"Lagan Valley",1992,1
+"Mid Ulster",1992,8
+"Newry & Armagh",1992,12
+"North Antrim",1992,2
+"Belfast North",1992,14
+"Belfast South",1992,11
+"South Down",1992,1
+"Upper Bann",1992,5
+"Belfast West",1992,12
+"East Antrim",1993,1
+"Belfast East",1993,5
+"East Londonderry",1993,11
+"Fermanagh & South Tyrone",1993,5
+"Foyle",1993,1
+"Lagan Valley",1993,1
+"Mid Ulster",1993,4
+"Newry & Armagh",1993,11
+"Belfast North",1993,13
+"North Down",1993,1
+"Belfast South",1993,4
+"Strangford",1993,2
+"Upper Bann",1993,3
+"Belfast West",1993,19
+"West Tyrone",1993,2
+"East Antrim",1994,3
+"Belfast East",1994,2
+"East Londonderry",1994,3
+"Fermanagh & South Tyrone",1994,2
+"Foyle",1994,1
+"Lagan Valley",1994,1
+"Mid Ulster",1994,2
+"Newry & Armagh",1994,7
+"North Antrim",1994,1
+"Belfast North",1994,8
+"South Antrim",1994,3
+"Belfast South",1994,7
+"South Down",1994,6
+"Strangford",1994,3
+"Upper Bann",1994,3
+"Belfast West",1994,11
+"Fermanagh & South Tyrone",1995,1
+"Belfast North",1995,1
+"North Down",1995,1
+"Belfast South",1995,2
+"Belfast West",1995,3
+"Foyle",1996,1
+"Lagan Valley",1996,2
+"Mid Ulster",1996,1
+"North Antrim",1996,1
+"Belfast North",1996,2
+"Belfast South",1996,2
+"Upper Bann",1996,3
+"Belfast West",1996,3
+"East Antrim",1997,1
+"Belfast East",1997,1
+"Fermanagh & South Tyrone",1997,1
+"Lagan Valley",1997,2
+"Newry & Armagh",1997,1
+"North Antrim",1997,1
+"Belfast North",1997,2
+"North Down",1997,1
+"South Antrim",1997,2
+"South Down",1997,1
+"Upper Bann",1997,4
+"Belfast West",1997,2
+"Foyle",1998,1
+"Mid Ulster",1998,1
+"Newry & Armagh",1998,2
+"North Antrim",1998,3
+"Belfast North",1998,4
+"North Down",1998,1
+"South Antrim",1998,2
+"Belfast South",1998,3
+"Upper Bann",1998,4
+"Belfast West",1998,4
+"West Tyrone",1998,29
+"Newry & Armagh",1999,3
+"Belfast North",1999,1
+"Upper Bann",1999,2
+"Belfast West",1999,2
+"East Antrim",2000,1
+"East Londonderry",2000,1
+"Fermanagh & South Tyrone",2000,1
+"Belfast North",2000,9
+"Belfast South",2000,1
+"Strangford",2000,1
+"Upper Bann",2000,4
+"Belfast West",2000,1
+"East Londonderry",2001,1
+"Foyle",2001,1
+"Newry & Armagh",2001,1
+"Belfast North",2001,4
+"North Down",2001,1
+"South Antrim",2001,1
+"Belfast South",2001,2
+"Upper Bann",2001,2
+"Belfast West",2001,1
+"West Tyrone",2001,1
+"East Antrim",2002,1
+"Belfast East",2002,2
+"East Londonderry",2002,1
+"Foyle",2002,1
+"Belfast North",2002,3
+"North Down",2002,1
+"South Down",2002,1
+"West Tyrone",2002,1
+"East Antrim",2003,1
+"Belfast East",2003,1
+"Foyle",2003,1
+"Newry & Armagh",2003,1
+"Belfast North",2003,5
+"South Antrim",2003,1
+"Belfast South",2003,2
+"Belfast West",2003,1
+"Belfast East",2005,1
+"Belfast North",2005,1
+"Belfast South",2005,1
