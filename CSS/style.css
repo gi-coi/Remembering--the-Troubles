@@ -3,19 +3,11 @@ body {
     margin: 0;
 }
 
-
 body * {
     font-family: 'Roboto', 'Open Sans', Arial, Helvetica, sans-serif;
 }
 
-h1, h2, h3 {
-    font-family: 'Domine', 'Times New Roman', Times, serif;
-}
-
-
-.focus circle {
-    z-index: 99;
-}
+/* Containers */
 
 #content {
     width: 75vw;
@@ -29,25 +21,100 @@ h1, h2, h3 {
     margin: 4em auto;
 }
 
+.caption {
+    margin: 1em auto;
+    width: 60vw;
+}
+
+p.captionText {
+    font-style: oblique;
+    margin: 0;
+}
+
+h3.captionText {
+    margin: .5em 0;
+}
+
+nav {
+    width: 100%;
+    background-color: #222020;
+    padding: .5em;
+    position: fixed;
+    opacity: .8;
+    top: 0;
+    z-index: 99;
+}
+
+header {
+    display: flex;
+    justify-content: left;
+    align-items: flex-end;
+    width: 100%;
+    height: 80vh;
+    margin: 0 auto;
+    background: url(../img/header.jpg) no-repeat center center fixed;
+    background-size: cover;
+}
+
+.headerTitle {
+    font-size: 3.5em;
+    color: #fff;
+    padding-left: 2em;
+    text-shadow: black 4px 4px 4px;
+    /*   position: absolute;
+    bottom: 1em;
+    left: 2em; */
+}
+
+.navTitle {
+    color: #fff;
+    font-size: 1.4em;
+}
+
+/* 
+Tooltip styling */
+
+.focus circle {
+    z-index: 99;
+}
+
+.focus text {
+    font-family: 'Roboto', 'Open Sans', Helvetica, Arial, sans-serif;
+    font-weight: 600;
+}
+
+div.tooltip {
+    position: absolute;
+    text-align: center;
+    min-width: 60px;
+    min-height: 40px;
+    padding: 2px;
+    font: 16px sans-serif;
+    background: white;
+    border: 0px;
+    border-radius: 8px;
+    pointer-events: none;
+}
+
+/* Chart-specific rules*/
 
 .chartDiv {
     width: 100%;
     min-height: 80vh;
 }
 
-
 .barChart {
     width: 50%;
     min-height: 80vh;
     margin: 0 auto;
 }
+
 .barlabel, .label {
     stroke: none;
     fill: #ffffff;
     font-family: 'Open Sans', Helvetica, Arial, sans-serif;
     font-size: .9em;
 }
-
 
 #stories {
     display: flex;
@@ -67,83 +134,30 @@ h1, h2, h3 {
 .invisible {
     display: none;
 }
-nav {
-    width: 100%;
-    background-color: #222020;
-    padding: .5em;
-    position: fixed;
-    opacity: .8;
-    top: 0;
+
+h1, h2, h3 {
+    font-family: 'Domine', 'Times New Roman', Times, serif;
+}
+
+.bar, .group {
     z-index: 99;
 }
 
-header {
-    display: flex;
-    justify-content: left;
-    align-items: flex-end;
-    width: 100%;
-    height: 80vh;
-    margin: 0 auto;
-    background:url(../img/header.jpg) no-repeat center center fixed;
-    background-size: cover;
- 
-    
-}
-
-.headerTitle {
-    font-size: 3.5em;
-    color: #fff;
-    padding-left: 2em;
-    text-shadow: black 4px 4px 4px;
-  /*   position: absolute;
-    bottom: 1em;
-    left: 2em; */
-}
-.navTitle {
-    color: #fff;
-    font-size: 1.4em;
-}
-
-
-
-
 .axis text {
-    font-family:'Roboto',  'Open Sans', Helvetica, Arial, sans-serif;
-}
-
-
-.focus text {
     font-family: 'Roboto', 'Open Sans', Helvetica, Arial, sans-serif;
-    font-weight: 600;
 }
 
-#treemap {
-    width:100%;
-    height: auto;
-    margin: 0 auto;
-   
-  /*   overflow: auto; */
+.grid line {
+    stroke: lightgrey;
+    opacity: .6;
+    shape-rendering: crispEdges;
 }
 
-.treeLabel {
-    stroke:none;
-    font-size: 1.05em;
-   
+.grid path {
+    stroke-width: 0;
 }
 
-
-div.tooltip {
-    position: absolute;
-    text-align: center;
-    min-width: 60px;
-    min-height: 40px;
-    padding: 2px;
-    font: 16px sans-serif;
-    background: white;
-    border: 0px;
-    border-radius: 8px;
-    pointer-events: none;
-}
+/* MAP */
 
 #mapVis {
     margin: 0px;
@@ -160,16 +174,31 @@ div.tooltip {
     stroke-width: .1px;
 }
 
+/* slider for map */
 
 #slider {
     display: flex;
 }
+
 #yearSlider {
     width: 30%;
 }
 
-
 .warning {
-   margin: 0em;
-   padding-left: 1em;
+    margin: 0em;
+    padding-left: 1em;
+}
+
+/* TREEMAP */
+
+#treemap {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    /*   overflow: auto; */
+}
+
+.treeLabel {
+    stroke: none;
+    font-size: 1.05em;
 }

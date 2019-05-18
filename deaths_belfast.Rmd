@@ -31,11 +31,13 @@ Victims by year and location
 ```{r}
 mc_clean %>%
   filter(location < 19) %>%
-  mutate(total = nrow(.)) #3390 deaths in NI 
+  mutate(total = nrow(.)) %>%
+  distinct(total) -> total_NI#3390 deaths in NI 
 
 mc_clean %>%
   filter(location >= 19) %>%
-  mutate(total = nrow(.)) #259 deaths outside NI
+  mutate(total = nrow(.)) %>%
+  distinct(total) -> total_rest #259 deaths outside NI
  
 ```
 

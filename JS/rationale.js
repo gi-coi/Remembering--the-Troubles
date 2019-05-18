@@ -38,7 +38,14 @@ svg.append("g")
     .attr(
      "transform",
      "translate(0," + (height ) + ")"
+     
  )
+
+
+ svg.append("g")
+ .attr("class","grid")
+ .attr("transform","translate(0," + height + ")")
+ .style("stroke-dasharray",("3,3"));
 
     
 
@@ -56,12 +63,11 @@ svg.append("g")
  
     
     d3.csv('csv/vic_rationale.csv', function (d) {
- 
-       
         d.victims = +d.victims;
         return d;
     }, function(deaths_data) {
-        console.log(deaths_data);
+
+      /*   console.log(deaths_data); */
     
     
         data = deaths_data;
@@ -78,7 +84,6 @@ svg.append("g")
           
             
             .rollup(function (leaves) {
-           
                 return {
                   'total_vics':  d3.sum(leaves, function (d) {
                  
@@ -191,7 +196,7 @@ var new_groups = groups
   
 
  
- new_groups
+/*  new_groups
  .append('text')
  .attr('class', 'barlabel')
  .attr('x', 7)
@@ -201,7 +206,7 @@ var new_groups = groups
  //.style('font-size', .4 * yScale.bandwidth())
  
  .attr('text-anchor', 'left')
- .text(function (d) { return d.total})
+ .text(function (d) { return d.total}) */
  //.style('stroke', '#fff')
  
  /*        groups
@@ -231,7 +236,18 @@ var new_groups = groups
  
  svg.select('.x.axis')
  .transition()
- .call(d3.axisBottom(xScale))
+ .call(d3.axisBottom(xScale)
+ .ticks(5))
+
+
+ svg.select('g.grid')
+ .transition()
+ .call(d3.axisBottom(xScale)
+ .ticks(5)
+   .tickSize(-height)
+   .tickFormat("")
+)
+
     
     }
  
