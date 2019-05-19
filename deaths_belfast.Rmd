@@ -27,7 +27,7 @@ ggplot(victims_per_year, aes(year, victims)) + geom_area(col = '#801515', fill =
   theme(text = element_text(family = 'Open Sans'), axis.title.y = element_text(margin = margin(t = 0, r = 20, b = 0, l = 0)), plot.title = element_text(margin = margin(t = 0, r = 0, b = 20, l = 0)), panel.grid = element_line(colour = '#f2f2f2'), panel.grid.minor.x = element_blank())
 ```
 
-Victims by year and location
+<h2>Victims by year and location</h2>
 ```{r}
 mc_clean %>%
   filter(location < 19) %>%
@@ -38,10 +38,12 @@ mc_clean %>%
   filter(location >= 19) %>%
   mutate(total = nrow(.)) %>%
   distinct(total) -> total_rest #259 deaths outside NI
- 
+
+print(c('Victims in Northern Ireland:', total_NI[1, ]), quote = FALSE)
+print(c('Victims outside Northern Ireland:', total_rest[1, ]), quote = FALSE)
 ```
 
-All deaths in NI, by year
+<h2>All deaths in NI, by year</h2>
 ```{r}
 mc_clean %>%
   filter(location < 19) %>%
@@ -49,7 +51,7 @@ mc_clean %>%
   summarise(victims = n()) %>%
   arrange(year) %>%
   ungroup () %>%
-  mutate(location_name = recode(location_name, 'West Belfast' = 'Belfast West', 'North Belfast' = 'Belfast North' , 'South Belfast' = 'Belfast South', 'East Belfast' = 'Belfast East')) #%>%
+  mutate(location_name = recode(location_name, 'West Belfast' = 'Belfast West', 'North Belfast' = 'Belfast North' , 'South Belfast' = 'Belfast South', 'East Belfast' = 'Belfast East')) -> deaths_by_year #%>%
  # write.csv('deaths_ni.csv', row.names = FALSE)
 ```
 
@@ -96,7 +98,7 @@ ggplot(vic_by_religion, aes(reorder(religion, victims), victims, fill = religion
 qual_p <- brewer.pal(n = 4, name = 'Set2')
 ```
 
-<p>Agency-group match is done based on McKeon's lookup tables</p>
+<p>Agency-group match is done based on McKeown's lookup tables</p>
 
 <h3>Victims identified as catholic</h3>
 ```{r}

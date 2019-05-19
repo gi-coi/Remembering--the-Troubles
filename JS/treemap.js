@@ -32,27 +32,26 @@ var paddingAllowance = 2;
     .append("g")
     .attr("transform",
       "translate(" + margin.left + "," + margin.top + ")");
-
+      width = width - margin.left - margin.right;
+      height = height - margin.top - margin.bottom;
 
   // to navigate the treemap
   var grandparent = svg.append("g")
     .attr("class", "grandparent");
 
 
-
   grandparent.append("rect")
     .attr("y", -margin.top)
     .attr("width", width)
     .attr("height", margin.top)
-    .attr("fill", '#bbbbbb');
+    .attr("fill", '#e3e3e3');
   grandparent.append("text")
     .attr("x", 6)
     .attr("y", 6 - margin.top)
     .attr("dy", ".75em")
 
 
-  width = width - margin.left - margin.right;
-  height = height - margin.top - margin.bottom;
+
 
 
   var xScale = d3.scaleLinear()
@@ -130,12 +129,16 @@ var yScale = d3.scaleLinear()
       .select("text")
       .text(name(tree));
 
-   var   g1 = svg.insert("g", ".grandparent")
+
+      // container for treemap
+   var g1 = svg.insert("g", ".grandparent")
       .datum(tree)
       .attr("class", "depth")
       .attr('width', width)
       .attr('height', height)
     
+
+    // groups by religion
     var cell = g1.selectAll(".group")
       .data(tree.children)
       .enter().append("g")
@@ -146,6 +149,8 @@ var yScale = d3.scaleLinear()
         return "translate(" + d.x0 + "," + d.y0 + ")";
       }) */
 
+
+  // filter data for zoom-in
       cell.filter(function (d) {
         return d.children;
     })
@@ -154,6 +159,9 @@ var yScale = d3.scaleLinear()
          
           return transition(d);
         });
+
+
+  // subgroups with child rectangles
   var sub = cell.selectAll(".sub")
         .data(function (d) {
          
@@ -179,16 +187,13 @@ var yScale = d3.scaleLinear()
       });
  */
 
-
+// tooltip on hover
       child.on('mouseenter', function (d) {
-    
         tooltip.transition()        
             .duration(100)      
             .style("opacity", .9) 
             .style("left", (d3.event.pageX) + "px")     
             .style("top", (d3.event.pageY - 28) + "px");
-
-
             tooltipText.text( d.parent.data.id + ', ' + d.data.id + "\n" + d.value);
         })                  
     .on("mouseout", function(d) {       
@@ -197,12 +202,13 @@ var yScale = d3.scaleLinear()
             .style("opacity", 0);   
     });
 
- var labels =  sub
 
+    // labels for rectangles
+  sub
       .append('text')
       .attr('class', 'treeLabel')
       .call(text)
-      .html(function (d, i) {
+      .html(function (d) {
     
          return d.parent.data.id + ', ' +d.data.data.agency;;
        
@@ -211,12 +217,14 @@ var yScale = d3.scaleLinear()
 
 
       d3.selectAll('.treeLabel')
+      // this function hides them if there isn't enough room
       .call(wrap);
      
        
 
 
-    
+    // moved to separate functions
+    // makes it easier to handle transitions afterwards
 
       /*   .attr("width", function (d) {
           return xScale(d.x1) - xScale(d.x0)
@@ -257,7 +265,13 @@ var yScale = d3.scaleLinear()
         return d.parent.data.id + ', ' + d.data.id + "\n" + d.value;
       });
  */
+
+
+
 var transition = function (data) {
+// transition when you zoom in/out in the hierarchy
+// called by click event on squares
+
   /* console.log(data); */
   if (transitioning || !data) return;
   transitioning = true;
@@ -304,7 +318,7 @@ return cell;
 
 }
 
-
+// for text inside each square; sets position
 function text(text) {
   text.attr("x", function (d) {
     
@@ -315,6 +329,8 @@ function text(text) {
       });
 }
 
+
+//position and dimension for each rectangle in the treemap
 var rect =function(rect) {
   rect
       .attr("x", function (d) {
@@ -330,7 +346,7 @@ var rect =function(rect) {
           return yScale(d.y1) - yScale(d.y0);
       })
       .attr("fill", function (d) {
-       
+       // colour depends on religion
           return colours(d.ancestors()[0].parent.data.id);
       })
     
@@ -342,15 +358,15 @@ var rect =function(rect) {
 
 })();
 
-
+// text in the overarching rectangle to guide user interaction
 function name(d) {
   return breadcrumbs(d) +
     (d.parent
       ? " -  Click to zoom out"
-      : " - Click inside square to zoom in");
+      : " - Click inside the square to zoom in");
 }
 
-
+// format name indicating current section
 function breadcrumbs(d) {
   var res = "";
   var sep = " > ";
@@ -374,17 +390,20 @@ function breadcrumbs(d) {
 
 
 function wrap(text ){
+  // hides labels if they are larger/taller than the rectangle
   text.each(function () {
     text = this;
+    // dimensions of the text node
 var textnode = text.getBoundingClientRect();
 
-
-
- 
+// dimensions of the "rect" (it's not the parent, but the sibling)
+// no query selectors to access preceding sibling, therefore I select the parent, then the first child ('rect')
   var p = text.parentNode.childNodes[0].getBoundingClientRect();
 
-  if (textnode.width > p.width | textnode.height > p.height) {
 
+  // toggling visibility
+  if (textnode.width > p.width | textnode.height > p.height) {
+ // hides the text to avoid overflow
     text.style.visibility = 'hidden';
   } 
 

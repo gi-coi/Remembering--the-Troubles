@@ -162,7 +162,7 @@
             .append('g')
             .attr('class', 'group');
 
-
+// add bars with fill by context of death
         groups
             .selectAll('.bar')
             .data(function (d) {
@@ -186,9 +186,11 @@
                 return colours(d.context)
             });
 
+
+    // show div with summary of events
         groups
             .on('click', function (d) {
-                // show div with short summary of the event
+             
                 var bar = d3.select(this);
 
                 // if statements to handle selections and transitions

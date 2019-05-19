@@ -137,6 +137,7 @@
                     // format names of local authorities
                     tooltipText.html(capitaliser(d.properties.PC_NAME) + '<br>' + d.properties.victims)
                 })
+                .on("mouseout", function() { tooltip.style("opacity", "0")})
 
 
                 .attr("id", function (d) { return d.properties.OBJECTID; })
