@@ -224,7 +224,7 @@ library(janitor)</code></pre>
 <pre><code>## Registering fonts with R</code></pre>
 <pre class="r"><code>library(RColorBrewer)</code></pre>
 <pre><code>## Warning: package 'RColorBrewer' was built under R version 3.5.2</code></pre>
-<pre class="r"><code>mckeown &lt;- read.csv('deaths_mckeown.csv', na =c('', NA))
+<pre class="r"><code>mckeown &lt;- read.csv('source_files/deaths_mckeown.csv', na =c('', NA))
 glimpse(mckeown)</code></pre>
 <pre><code>## Observations: 3,649
 ## Variables: 23
@@ -349,7 +349,7 @@ Victims identified as catholic
 <pre class="r"><code>catholic_victims &lt;- mc_clean %&gt;%
   filter(religion == 'Catholic')
 
-lookup_agency &lt;- read.csv('lookup_agency.csv')
+lookup_agency &lt;- read.csv('source_files/lookup_agency.csv')
 
 indices &lt;- match ( x = catholic_victims$agency, table = lookup_agency$Agency)
 
@@ -447,7 +447,7 @@ mc_clean %&gt;%
 ## # ... with 28 more rows</code></pre>
 <pre class="r"><code> # write.csv('victims_location.csv', row.names = FALSE)</code></pre>
 <p>Lookup table for status; left join to create a classification (victims by group and sub-group)</p>
-<pre class="r"><code>lookup.status &lt;- read.csv('lookup_status.csv') %&gt;%
+<pre class="r"><code>lookup.status &lt;- read.csv('source_files/lookup_status.csv') %&gt;%
   clean_names()
 
 

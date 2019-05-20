@@ -1,0 +1,29 @@
+Status_Id,Status,Group
+0,Other Non Combatant,Non Combatant
+1,BA,Security Forces
+2,RUC,Security Forces
+3,UDR,Security Forces
+4,Prov.,Republican PM
+5,Off,Republican PM
+6,Inla,Republican PM
+7,Iplo,Republican PM
+8,Uda,Loyalist PM
+9,Uvf,Loyalist PM
+10,Lvf,Loyalist PM
+11,Pol,Non Combatant
+12,Legal/judicial,Non Combatant
+13,PO,Security Forces
+14,Ex ser.,Non Combatant
+15,Alleged Inf.,Non Combatant
+16,Eng.Constab.,Security Forces
+17,Guard/Army,Security Forces
+18,Disappeared,Non Combatant
+19,Businessman,Non Combatant
+20,Taxi,Non Combatant
+21,Retail,Non Combatant
+22,Security,Non Combatant
+23,criminality,Non Combatant
+24,PM informer,Non Combatant
+25,RIRA,Republican PM
+26,RHD,Loyalist PM
+27,Rhc,Loyalist PM

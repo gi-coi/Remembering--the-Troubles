@@ -6,7 +6,7 @@ library(ggplot2)
 library(janitor)
 library(extrafont)
 library(RColorBrewer)
-mckeown <- read.csv('deaths_mckeown.csv', na =c('', NA))
+mckeown <- read.csv('source_files/deaths_mckeown.csv', na =c('', NA))
 glimpse(mckeown)
 
 mc_clean <- mckeown %>%
@@ -105,7 +105,7 @@ qual_p <- brewer.pal(n = 4, name = 'Set2')
 catholic_victims <- mc_clean %>%
   filter(religion == 'Catholic')
 
-lookup_agency <- read.csv('lookup_agency.csv')
+lookup_agency <- read.csv('source_files/lookup_agency.csv')
 
 indices <- match ( x = catholic_victims$agency, table = lookup_agency$Agency)
 
@@ -202,7 +202,7 @@ mc_clean %>%
 
 Lookup table for status; left join to create a classification (victims by group and sub-group)
 ```{r}
-lookup.status <- read.csv('lookup_status.csv') %>%
+lookup.status <- read.csv('source_files/lookup_status.csv') %>%
   clean_names()
 
 
