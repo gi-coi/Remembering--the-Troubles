@@ -104,7 +104,7 @@ div.tooltip {
 }
 
 .barChart {
-    width: 50%;
+    width: 100%;
     min-height: 80vh;
     margin: 0 auto;
 }
@@ -145,6 +145,7 @@ h1, h2, h3 {
 
 .axis text {
     font-family: 'Roboto', 'Open Sans', Helvetica, Arial, sans-serif;
+    font-size: .7em;
 }
 
 .grid line {
@@ -202,3 +203,12 @@ h1, h2, h3 {
     stroke: none;
     font-size: 1.05em;
 }
+
+
+@media (min-width: 40em) {
+    .barChart {
+        width: 50%;
+        min-height: 80vh;
+        margin: 0 auto;
+    }
+  }

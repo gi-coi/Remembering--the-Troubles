@@ -7,7 +7,7 @@
 
     var height = d3.select('#top10').node().getBoundingClientRect().height;
 
-    var margin = { top: 50, bottom: 50, left: 160, right: 50 };
+    var margin = { top: 50, bottom: 50, left: 110, right: 50 };
 
     var displayed;
     var svg = d3.select('#top10')
@@ -267,26 +267,29 @@
         var l_group = legend.selectAll('g')
             .data(d3.map(data, function (d) { return d.context; }).keys())
             .enter()
-            .append('g');
+            .append('g')
+            .attr("transform", function (d, i) {
+                {
+                    return "translate(0," + i * 20 + ")"
+                }
+            })
 
         l_group
             .append('rect')
             .attr('width', square)
             .attr('height', square)
-            .attr('x', function (d, i) {
-                return legendWidth * i;
-            })
-            .attr('y', y)
+            .attr('x', 0)
+            .attr('y', 0)
             .attr('fill', function (d) {
                 return colours(d);
             })
 
         l_group
             .append('text')
-            .attr('x', function (d, i) {
-                return legendWidth * i + square + 5;
-            })
-            .attr('y', y + 14)
+            .attr('x', 20)
+            .attr('y', 10)
+            .attr('dy', '.25em')
+            .style("text-anchor", "start")
             .text(function (d) {
                 return d;
             })
