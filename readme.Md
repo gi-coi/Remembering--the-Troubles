@@ -1,3 +1,0 @@
-<p>This university project is a series of data visualisations of the victims of the Troubles, from 1969 to 2005. It is based on Michael McKeown's database, which remains copyright of the author but can be <a href='https://cain.ulster.ac.uk/victims/mckeown/' target='_blank'>downloaded</a> for free for research purposes.</p>
-<p>See the final work <a href='https://gi-coi.github.io/remembering-the-Troubles/' target='_blank'>here</a>.</p>
-<p>Credits for the photo: <a href='http://www.lidiabonifati.com/' target='_blank'>Lidia Bonifati</a>, whose passion and stories inspired me to start this project.</p>
