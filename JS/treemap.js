@@ -1,14 +1,14 @@
 //https://gerardnico.com/viz/d3/layout/treemap
+// adapted from http://bl.ocks.org/ganeshv/6a8e9ada3ab7f2d88022
 
 (function () {
 
-  var divWidth = document.getElementById('treemap').offsetWidth;
   var margin = { top: 20, right: 20, bottom: 20, left: 20 },
    // width = 900,
    // height = 900,
     transitioning;
   var colours = d3.scaleOrdinal().range(['#27647b', '#ca3542', '#aecbc9', '#b49fad', '#57575f']);
-var paddingAllowance = 2;
+
 
   var width = d3.select('#treemap').node().getBoundingClientRect().width;
 
