@@ -10,14 +10,14 @@ body * {
 /* Containers */
 
 #content {
-    width: 75vw;
+    width: 100%;
     margin: 0 auto;
-    padding: 5em;
+    padding: 1em;
     background-color: #fff;
 }
 
 .text {
-    width: 60vw;
+    width: 90%;
     margin: 4em auto;
 }
 
@@ -57,9 +57,10 @@ header {
 }
 
 .headerTitle {
-    font-size: 3.5em;
+    font-size: 2.5em;
     color: #fff;
-    padding-left: 2em;
+    padding-left: .3em;
+/*     padding-left: 2em; */
     text-shadow: black 4px 4px 4px;
     /*   position: absolute;
     bottom: 1em;
@@ -210,5 +211,22 @@ h1, h2, h3 {
         width: 50%;
         min-height: 80vh;
         margin: 0 auto;
+    }
+
+    #content {
+        width: 75vw;
+       
+        padding: 5em;
+       
+    }
+
+    .headerTitle {
+        padding-left: 2em;
+        font-size: 3.5em;
+    }
+
+
+    .text {
+        width: 60vw;
     }
   }

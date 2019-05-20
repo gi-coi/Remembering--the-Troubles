@@ -174,7 +174,7 @@ var lineChart = function(data) {
         })
         .style("fill", "none")
         .style("pointer-events", "all")
-        .on("mouseover", function() { focus.style("display", null); })
+        .on("mouseover", function() { focus.style("display", null); return mousemove(); })
         .on("mouseout", function() { focus.style("display", "none"); })
         .on("mousemove", mousemove);
 
